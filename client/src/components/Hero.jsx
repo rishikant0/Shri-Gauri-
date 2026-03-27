@@ -1,64 +1,84 @@
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
-export default function Hero() {
-  const navigate = useNavigate();
+function Hero() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (heroRef.current) {
+        heroRef.current.classList.add("loaded");
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const scrollY = window.scrollY;
+        const bg = heroRef.current.querySelector(".hero__bg img");
+        if (bg) {
+          bg.style.transform = `scale(1.1) translateY(${scrollY * 0.3}px)`;
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <section className="relative h-[85vh] flex items-center justify-center text-white pt-20">
-
-      {/* Background */}
-      <div className="absolute inset-0">
+    <section className="hero" ref={heroRef} id="hero-section">
+      <div className="hero__bg">
         <img
-          src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
-          className="w-full h-full object-cover"
-          alt="hotel"
+          src="/images/hero-bg.png"
+          alt="Luxury hotel lobby with golden lighting"
+          loading="eager"
         />
-        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+      <div className="hero__overlay"></div>
+
+      {/* Floating Particles */}
+      <div className="hero__particles">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} className="hero__particle"></div>
+        ))}
       </div>
 
-      {/* Content */}
-      <div className="relative text-center px-6 max-w-4xl">
+      <div className="hero__content">
+        <div className="hero__badge">
+          <span className="hero__badge-dot"></span>
+          Premium Hospitality Consulting
+        </div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-3xl md:text-5xl font-bold mb-4 leading-tight"
-        >
+        <h1 className="hero__title">
           Transforming Hospitality Into{" "}
-          <span className="text-[#D8B384]">Profitable Brands</span>
-        </motion.h1>
+          <span>Profitable Brands</span>
+        </h1>
 
-        <p className="text-md md:text-lg mb-6 text-gray-200">
-          Hotel Setup • Revenue Growth • Branding • OTA Management
+        <p className="hero__subtitle">
+          We craft exceptional hotel experiences that drive revenue, elevate
+          guest satisfaction, and build iconic hospitality brands across India
+          and beyond.
         </p>
 
-        <div className="flex justify-center gap-4">
-          <button
-            onClick={() => navigate("/contact")}
-            className="bg-[#D8B384] px-6 py-3 rounded-lg font-semibold"
-          >
+        <div className="hero__buttons">
+          <Link to="/contact" className="btn-primary" id="hero-contact-btn">
             Contact Us
-          </button>
-
-          <button
-            onClick={() => navigate("/services")}
-            className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition"
-          >
+          </Link>
+          <Link to="/services" className="btn-outline" id="hero-services-btn">
             View Services
-          </button>
+          </Link>
         </div>
       </div>
 
-      {/* ✅ SMALL CURVE (FIXED) */}
-      <div className="absolute bottom-0 w-full overflow-hidden leading-none">
-        <svg viewBox="0 0 500 60" preserveAspectRatio="none">
-          <path
-            d="M0,0 C150,60 350,0 500,40 L500,60 L0,60 Z"
-            fill="#ffffff"
-          />
-        </svg>
+      <div className="hero__scroll-indicator">
+        <div className="hero__scroll-mouse"></div>
+        <span className="hero__scroll-text">Scroll Down</span>
       </div>
     </section>
   );
 }
+
+export default Hero;

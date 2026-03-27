@@ -1,19 +1,24 @@
-import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
-export default function TestimonialCard({ name, role, review }) {
+function TestimonialCard({ name, role, text, avatar, rating = 5 }) {
   return (
-    <motion.div
-      whileHover={{ y: -5 }}
-      className="bg-white p-6 rounded-2xl shadow-lg"
-    >
-      <p className="text-gray-600 italic mb-4">
-        "{review}"
-      </p>
-
-      <div>
-        <h4 className="font-bold text-[#1F3A52]">{name}</h4>
-        <p className="text-sm text-gray-500">{role}</p>
+    <div className="testimonial-card">
+      <div className="testimonial-card__stars">
+        {Array.from({ length: rating }).map((_, i) => (
+          <Star key={i} className="testimonial-card__star" size={16} fill="currentColor" />
+        ))}
       </div>
-    </motion.div>
+      <div className="testimonial-card__quote">"</div>
+      <p className="testimonial-card__text">{text}</p>
+      <div className="testimonial-card__author">
+        <img src={avatar} alt={name} className="testimonial-card__avatar" />
+        <div>
+          <div className="testimonial-card__name">{name}</div>
+          <div className="testimonial-card__role">{role}</div>
+        </div>
+      </div>
+    </div>
   );
 }
+
+export default TestimonialCard;
