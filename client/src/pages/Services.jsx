@@ -21,9 +21,9 @@ function Services() {
   return (
     <main id="services-page">
       {/* Page Hero */}
-      <section className="hero" style={{ minHeight: "60vh", height: "60vh" }}>
+      <section className="hero hero--about" >
         <div className="hero__bg">
-          <img src="/images/hero-bg.png" alt="Luxury hotel" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa" alt="Luxury hotel" loading="eager" />
         </div>
         <div className="hero__overlay"></div>
         <div className="hero__content">

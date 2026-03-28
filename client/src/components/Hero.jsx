@@ -4,73 +4,65 @@ import { Link } from "react-router-dom";
 function Hero() {
   const heroRef = useRef(null);
 
+  // Smooth load animation
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (heroRef.current) {
-        heroRef.current.classList.add("loaded");
-      }
+      heroRef.current?.classList.add("loaded");
     }, 100);
     return () => clearTimeout(timer);
   }, []);
 
-  // Parallax scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scrollY = window.scrollY;
-        const bg = heroRef.current.querySelector(".hero__bg img");
-        if (bg) {
-          bg.style.transform = `scale(1.1) translateY(${scrollY * 0.3}px)`;
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section className="hero" ref={heroRef} id="hero-section">
+      {/* BACKGROUND */}
       <div className="hero__bg">
         <img
-          src="/images/hero-bg.png"
-          alt="Luxury hotel lobby with golden lighting"
+          src="https://images.unsplash.com/photo-1590490360182-c33d57733427"
+          alt="Luxury hotel"
           loading="eager"
         />
       </div>
+
+      {/* DARK OVERLAY */}
       <div className="hero__overlay"></div>
 
-      {/* Floating Particles */}
+      {/* PARTICLES */}
       <div className="hero__particles">
         {Array.from({ length: 8 }).map((_, i) => (
           <div key={i} className="hero__particle"></div>
         ))}
       </div>
 
+      {/* CONTENT */}
       <div className="hero__content">
         <div className="hero__badge">
           <span className="hero__badge-dot"></span>
           Premium Hospitality Consulting
-        </div>        <h1 className="hero__title">
+        </div>
+
+        <h1 className="hero__title">
           Driving Hotel Growth Through <span>Strategy & Revenue</span>
         </h1>
 
         <p className="hero__subtitle">
-          9+ years of experience in building scalable hotel portfolios, 
+          9+ years of experience in building scalable hotel portfolios,
           onboarding 250+ partners, and driving revenue-led growth across India.
         </p>
+
         <div className="hero__buttons">
-          <Link to="/contact" className="btn-primary" id="hero-contact-btn">
+          <Link to="/contact" className="btn-primary">
             Contact Us
           </Link>
-          <Link to="/services" className="btn-outline" id="hero-services-btn">
+          <Link to="/services" className="btn-outline">
             View Services
           </Link>
         </div>
       </div>
 
+      {/* SCROLL INDICATOR */}
       <div className="hero__scroll-indicator">
         <div className="hero__scroll-mouse"></div>
-        <span className="hero__scroll-text">Scroll Down</span>
+        <span>Scroll Down</span>
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import ServicesSection from "../sections/ServicesSection";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../sections/Testimonials";
 import CTASection from "../components/CTASection";
-
+import Gallery from "../components/gallery";
 function Home() {
   // Scroll reveal observer
   useEffect(() => {
@@ -36,6 +36,7 @@ function Home() {
       <ServicesSection />
       <WhyChooseUs />
       <Testimonials />
+      <Gallery/>
       <CTASection />
     </main>
   );

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Check, Award, Building2, TrendingUp, Target, Zap, ShieldCheck, Mail } from "lucide-react";
+import profileImg from "../assets/owner.jpeg";
 
 /**
  * Shri Gauri Hospitality - About Page
@@ -60,9 +61,9 @@ function About() {
   return (
     <main id="about-page">
       {/* Page Hero */}
-      <section className="hero" style={{ minHeight: "60vh", height: "60vh" }}>
+      <section className="hero hero--about" >
         <div className="hero__bg">
-          <img src="/images/hero-bg.png" alt="Luxury hotel" loading="eager" />
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32" alt="Luxury hotel" loading="eager" />
         </div>
         <div className="hero__overlay"></div>
         <div className="hero__content">
@@ -148,19 +149,18 @@ function About() {
               justifyContent: "center",
               boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
             }}>
-              {!imageError ? (
-                <img 
-                  src="/images/abhishek.jpg" 
-                  alt="Abhishek Jaiswal" 
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  onError={() => setImageError(true)}
-                />
-              ) : (
-                <div style={{ textAlign: "center" }}>
-                  <div style={{ fontSize: "6rem", fontWeight: 700, color: "var(--gold-500)", fontFamily: "var(--font-display)" }}>AJ</div>
-                  <div style={{ color: "var(--white-50)", fontSize: "0.8rem", marginTop: "10px" }}>Founder Profile Portrait</div>
-                </div>
-              )}
+             {!imageError ? (
+  <img 
+    src={profileImg}
+    alt="Abhishek Jaiswal"
+    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+    onError={() => setImageError(true)}
+  />
+) : (
+  <div style={{ textAlign: "center" }}>
+    <div style={{ fontSize: "6rem", color: "gold" }}>AJ</div>
+  </div>
+)}
               
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "30px 20px", background: "linear-gradient(transparent, rgba(0,0,0,0.9))", textAlign: "center" }}>
                 <a 
