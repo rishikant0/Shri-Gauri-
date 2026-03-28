@@ -6,50 +6,72 @@ import {
   ShoppingCart,
   Palette,
   Layers,
+  PieChart,
+  Network,
+  Activity
 } from "lucide-react";
+
+/**
+ * Enhanced Services Section
+ * Reflects professional consulting services as per user's hospitality business experience.
+ */
 
 const services = [
   {
     icon: <Building2 size={28} color="#c9a84c" />,
-    title: "Hotel Setup & Pre-opening Support",
+    title: "Hotel Setup & Pre-opening",
     description:
-      "Complete guidance from concept to launch — site evaluation, licensing, staffing, SOP creation, and pre-opening strategies for a flawless hotel debut.",
+      "Expert guidance for new properties — from site evaluation and licensing to SOP creation and pre-opening launch strategies.",
     delay: 1,
   },
   {
     icon: <TrendingUp size={28} color="#c9a84c" />,
-    title: "Sales & Revenue Management",
+    title: "Revenue & Pricing Strategy",
     description:
-      "Data-driven pricing strategies, demand forecasting, and yield management to maximize occupancy rates and revenue per available room.",
+      "Data-driven dynamic pricing, yield management, and revenue strategies to maximize ADR and RevPAR performance.",
     delay: 2,
   },
   {
     icon: <ShoppingCart size={28} color="#c9a84c" />,
-    title: "OTA Handling",
+    title: "OTA & Online Visibility",
     description:
-      "Expert management of MakeMyTrip, Goibibo, Booking.com, and other OTA platforms to boost online visibility, rankings, and direct bookings.",
+      "Strategic management of MakeMyTrip, Goibibo, Booking.com, and Expedia to boost rankings and online conversion.",
     delay: 3,
   },
   {
     icon: <Handshake size={28} color="#c9a84c" />,
-    title: "Corporate Sales & Contracting",
+    title: "Corporate & B2B Contracting",
     description:
-      "Building strong B2B partnerships, negotiating corporate contracts, and securing long-term business accounts for consistent revenue streams.",
+      "Building strong corporate partnerships and negotiating B2B contracts to ensure consistent, high-yield business streams.",
     delay: 4,
   },
   {
-    icon: <Palette size={28} color="#c9a84c" />,
-    title: "Branding & Market Positioning",
+    icon: <Activity size={28} color="#c9a84c" />,
+    title: "Performance Optimization",
     description:
-      "Crafting distinctive brand identities, visual storytelling, and strategic positioning that captivate premium travelers and set you apart.",
+      "Deep audits and optimization of property operations to improve guest satisfaction and overall business efficiency.",
     delay: 5,
   },
   {
-    icon: <Layers size={28} color="#c9a84c" />,
-    title: "End-to-End Hospitality Solutions",
+    icon: <PieChart size={28} color="#c9a84c" />,
+    title: "Demand Forecasting",
     description:
-      "Comprehensive management covering operations, guest experience, digital marketing, staff training, and performance analytics — all under one roof.",
+      "Advanced market analysis to predict demand trends and align inventory for maximum profitability during peak periods.",
     delay: 6,
+  },
+  {
+    icon: <Network size={28} color="#c9a84c" />,
+    title: "Channel Distribution Strategy",
+    description:
+      "Optimizing your distribution mix across direct and indirect channels to minimize commission costs and maximize profits.",
+    delay: 7,
+  },
+  {
+    icon: <Layers size={28} color="#c9a84c" />,
+    title: "End-to-End Solutions",
+    description:
+      "Comprehensive consulting covering operations, marketing, branding, and team training all under one roof.",
+    delay: 8,
   },
 ];
 
@@ -63,11 +85,10 @@ function ServicesSection() {
           <span className="section__tag-line"></span>
         </div>
         <h2 className="section__title">
-          What We <span>Offer</span>
+          Driving <span>Market Success</span>
         </h2>
         <p className="section__description">
-          Comprehensive hospitality solutions tailored to transform your
-          property into a market-leading, profitable brand.
+          Revenue-driven hospitality consulting tailored to transform your property into a market-leading, profitable brand.
         </p>
       </div>
 

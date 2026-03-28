@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 const features = [
   {
     title: "Industry Expertise",
-    desc: "Over 15+ years of experience transforming hotels and resorts into market leaders.",
+    desc: "Over 9+ years of experience transforming hotels and resorts into market leaders.",
   },
   {
     title: "Revenue Growth",

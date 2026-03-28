@@ -50,19 +50,14 @@ function Hero() {
         <div className="hero__badge">
           <span className="hero__badge-dot"></span>
           Premium Hospitality Consulting
-        </div>
-
-        <h1 className="hero__title">
-          Transforming Hospitality Into{" "}
-          <span>Profitable Brands</span>
+        </div>        <h1 className="hero__title">
+          Driving Hotel Growth Through <span>Strategy & Revenue</span>
         </h1>
 
         <p className="hero__subtitle">
-          We craft exceptional hotel experiences that drive revenue, elevate
-          guest satisfaction, and build iconic hospitality brands across India
-          and beyond.
+          9+ years of experience in building scalable hotel portfolios, 
+          onboarding 250+ partners, and driving revenue-led growth across India.
         </p>
-
         <div className="hero__buttons">
           <Link to="/contact" className="btn-primary" id="hero-contact-btn">
             Contact Us

@@ -14,15 +14,13 @@ function CTASection() {
 
       <div className="cta__content">
         <h2 className="cta__title">
-          Ready to <span>Grow Your Hotel?</span>
+          Scale Your <span>Hotel Revenue</span>
         </h2>
         <p className="cta__desc">
-          Let's transform your hospitality business into a thriving, profitable
-          brand. Schedule a free consultation today and discover your property's
-          true potential.
+          Join 250+ hotel partners who have transformed their property performance with Shri Gauri Hospitality. Partner with us to unlock your property's full potential.
         </p>
         <Link to="/contact" className="btn-glow" id="cta-button">
-          Schedule Free Consultation
+          Get Expert Consultation
         </Link>
       </div>
     </section>
