@@ -5,12 +5,12 @@ const contactInfo = [
   {
     icon: <MapPin size={22} />,
     title: "Visit Us",
-    lines: ["H-90, Shakarpur,Laxmi Nagar, Delhi - 110092", "India"],
+    lines: ["H-90, Shakarpur, Laxmi Nagar", "Delhi - 110092, India"],
   },
   {
     icon: <Phone size={22} />,
     title: "Call Us",
-    lines: ["8808265053"],
+    lines: ["+91 8808265053"],
   },
   {
     icon: <Mail size={22} />,
@@ -135,91 +135,133 @@ function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Consultant Profile (Business Card Style) */}
           <div className="reveal reveal-delay-2">
-            <form
-              onSubmit={handleSubmit}
+            <div
               style={{
                 background: "var(--glass-bg)",
                 border: "1px solid var(--glass-border)",
                 borderRadius: "20px",
-                padding: "40px",
+                padding: "50px",
                 backdropFilter: "blur(15px)",
+                textAlign: "center",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "24px",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
               }}
             >
-              <h3
+              <div
                 style={{
+                  width: "120px",
+                  height: "120px",
+                  borderRadius: "50%",
+                  background: "var(--gold-500)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "var(--navy-800)",
+                  fontSize: "2.5rem",
+                  fontWeight: "700",
                   fontFamily: "var(--font-display)",
-                  fontSize: "1.5rem",
-                  color: "var(--white)",
-                  marginBottom: "30px",
+                  marginBottom: "8px",
+                  boxShadow: "0 0 20px rgba(181, 148, 88, 0.4)",
+                  border: "4px solid rgba(255, 255, 255, 0.1)",
                 }}
               >
-                Send Us a Message
-              </h3>
+                AJ
+              </div>
+              <div>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: "2rem",
+                    color: "var(--white)",
+                    marginBottom: "8px",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  ABHISHEK JAISWAL
+                </h3>
+                <p
+                  style={{
+                    color: "var(--gold-500)",
+                    fontSize: "1.1rem",
+                    fontWeight: "500",
+                    letterSpacing: "0.5px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Hospitality Business & Revenue Consultant
+                </p>
+              </div>
 
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  id="contact-name"
-                  style={inputStyle}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  id="contact-email"
-                  style={inputStyle}
-                />
-              </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px", marginBottom: "16px" }}>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  id="contact-phone"
-                  style={inputStyle}
-                />
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  id="contact-subject"
-                  style={inputStyle}
-                />
-              </div>
-              <textarea
-                name="message"
-                placeholder="Your Message..."
-                value={formData.message}
-                onChange={handleChange}
-                required
-                id="contact-message"
-                rows={5}
-                style={{ ...inputStyle, resize: "vertical", marginBottom: "24px" }}
-              />
-              <button
-                type="submit"
-                className="btn-glow"
-                id="contact-submit-btn"
-                style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px" }}
+              <div
+                style={{
+                  width: "60px",
+                  height: "2px",
+                  background: "var(--gold-500)",
+                  margin: "10px 0",
+                }}
+              ></div>
+
+              <p
+                style={{
+                  color: "var(--white-50)",
+                  fontSize: "1rem",
+                  lineHeight: "1.8",
+                  maxWidth: "400px",
+                }}
               >
-                <Send size={18} />
-                Send Message
-              </button>
-            </form>
+                Expert guidance in revenue management, brand strategy, and
+                operational excellence for luxury hotels and resorts across New
+                Delhi and India.
+              </p>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "16px",
+                  width: "100%",
+                  marginTop: "10px",
+                }}
+              >
+                <a
+                  href="https://www.shrigaurihospitality.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-glow"
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    textDecoration: "none",
+                  }}
+                >
+                  Visit Website
+                </a>
+                <a
+                  href="mailto:jabhishek287@gmail.com"
+                  className="btn-outline"
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    textDecoration: "none",
+                    padding: "16px",
+                  }}
+                >
+                  <Mail size={18} />
+                  Get in Touch
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -57,7 +57,7 @@ function About() {
             About Us
           </div>
           <h1 className="hero__title">
-            The Story Behind <span>Shri Gauri</span>
+            The Story Behind <span>Shri Gauri Hospitality</span>
           </h1>
           <p className="hero__subtitle">
             A legacy of transforming hospitality businesses into iconic,

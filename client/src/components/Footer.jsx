@@ -86,15 +86,15 @@ function Footer() {
           <h4 className="footer__column-title">Contact Us</h4>
           <div className="footer__contact-item">
             <MapPin size={16} className="footer__contact-icon" />
-            <span>Mumbai, Maharashtra, India</span>
+            <span>H-90, Shakarpur, Laxmi Nagar, Delhi-110092</span>
           </div>
           <div className="footer__contact-item">
             <Phone size={16} className="footer__contact-icon" />
-            <span>+91 98765 43210</span>
+            <span>+91 8808265053</span>
           </div>
           <div className="footer__contact-item">
             <Mail size={16} className="footer__contact-icon" />
-            <span>info@shrigauri.com</span>
+            <span>jabhishek287@gmail.com</span>
           </div>
         </div>
       </div>
