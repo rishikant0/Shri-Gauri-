@@ -49,7 +49,7 @@ function Footer() {
             <a href="#" className="footer__social-icon" aria-label="Facebook">
               <FacebookIcon />
             </a>
-            <a href="#" className="footer__social-icon" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/abhishek-jaiswal-a9a682158/" className="footer__social-icon" aria-label="LinkedIn">
               <LinkedinIcon />
             </a>
             <a href="#" className="footer__social-icon" aria-label="Twitter">
